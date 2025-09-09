@@ -84,7 +84,7 @@ public class PITerminologyParser extends AbstractTerminologyParser {
 
         int lineNr = 0;
 
-        Boolean hasStartLine = false;
+        boolean hasStartLine = false;
 
         for (String line : cleanLines) {
             if (line.trim().equals(type.getStart())) {

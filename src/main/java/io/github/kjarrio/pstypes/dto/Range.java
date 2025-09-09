@@ -9,11 +9,6 @@ public class Range {
 
     }
 
-    public Range(Integer startLine, Integer endLine) {
-        this.startLine = startLine;
-        this.endLine = endLine;
-    }
-
     public Integer getStartLine() {
         return startLine;
     }

@@ -1,6 +1,5 @@
 package io.github.kjarrio.pstypes.parsers;
 
-import io.github.kjarrio.pstypes.dto.Pair;
 import org.apache.commons.io.FileUtils;
 import java.io.*;
 import java.nio.charset.Charset;

@@ -12,10 +12,6 @@ public class JavaCodeGenerator extends AbstractCodeGenerator implements CodeGene
         this.setOutputFolder(outputFolder);
     }
 
-    public JavaCodeGenerator() {
-
-    }
-
     @Override
     public void generate(String className, List<Pair> pairs) {
 

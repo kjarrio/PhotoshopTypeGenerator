@@ -1,12 +1,8 @@
 package io.github.kjarrio.pstypes.parsers.charid;
 
 import io.github.kjarrio.pstypes.codegen.CodeGenerator;
-import io.github.kjarrio.pstypes.codegen.JavaCodeGenerator;
-import io.github.kjarrio.pstypes.codegen.TypescriptCodeGenerator;
-import io.github.kjarrio.pstypes.dto.Pair;
 import io.github.kjarrio.pstypes.parsers.TerminologyConstants;
 import java.io.File;
-import java.util.List;
 
 public class CharIdGenerator {
 

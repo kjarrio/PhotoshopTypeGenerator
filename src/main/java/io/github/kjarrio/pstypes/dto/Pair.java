@@ -2,8 +2,8 @@ package io.github.kjarrio.pstypes.dto;
 
 public class Pair {
 
-    private String key;
-    private String value;
+    private final String key;
+    private final String value;
     private String comment = "";
 
     public Pair(String key, String value) {
@@ -15,16 +15,8 @@ public class Pair {
         return key;
     }
 
-    public void setKey(String key) {
-        this.key = key;
-    }
-
     public String getValue() {
         return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 
     public Boolean hasComment() {
@@ -38,6 +30,5 @@ public class Pair {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
 
 }

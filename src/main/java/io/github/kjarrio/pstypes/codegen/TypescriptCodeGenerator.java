@@ -12,10 +12,6 @@ public class TypescriptCodeGenerator extends AbstractCodeGenerator implements Co
         this.setOutputFolder(outputFolder);
     }
 
-    public TypescriptCodeGenerator() {
-
-    }
-
     @Override
     public void generate(String className, List<Pair> pairs) {
 

@@ -57,7 +57,7 @@ public class CmdLineArgs {
             return false;
         }
 
-        Boolean hasLanguage = commandLine.getOptionValue('l') != null;
+        boolean hasLanguage = commandLine.getOptionValue('l') != null;
         String language = "";
         if (!hasLanguage) {
             this.printTitleAndVersion();
@@ -68,31 +68,36 @@ public class CmdLineArgs {
 
             language = commandLine.getOptionValue('l').toLowerCase().trim();
 
-            if (language.equals("all")) {
-                generateTS = true;
-                generateJava = true;
-            } else if (language.equals("ts")) {
-                generateTS = true;
-                generateJava = false;
-            } else if (language.equals("java")) {
-                generateTS = false;
-                generateJava = true;
-            } else {
-                this.printTitleAndVersion();
-                this.printError("Invalid option for lang: " + language);
-                printHelp();
-                return false;
+            switch (language) {
+                case "all" -> {
+                    generateTS = true;
+                    generateJava = true;
+                }
+                case "ts" -> {
+                    generateTS = true;
+                    generateJava = false;
+                }
+                case "java" -> {
+                    generateTS = false;
+                    generateJava = true;
+                }
+                default -> {
+                    this.printTitleAndVersion();
+                    this.printError("Invalid option for lang: " + language);
+                    printHelp();
+                    return false;
+                }
             }
 
 
         }
 
-        Boolean hasOutput = !commandLine.getOptionValue('o', "").isEmpty();
-        Boolean hasInput = !commandLine.getOptionValue('i', "").isEmpty();
-        Boolean tryDownload = false;
+        boolean hasOutput = !commandLine.getOptionValue('o', "").isEmpty();
+        boolean hasInput = !commandLine.getOptionValue('i', "").isEmpty();
+        boolean tryDownload = false;
         String outputValue = commandLine.getOptionValue("o", System.getProperty("user.dir"));
         String inputValue = commandLine.getOptionValue("i", ".");
-        this.outputFolder = new File(outputValue);;
+        this.outputFolder = new File(outputValue);
 
         if (!hasOutput) {
             printError("Warning: No output folder was chosen. Using current directory.");
